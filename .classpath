@@ -33,6 +33,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/Prem Ankur/.m2/repository/org/slf4j/slf4j-nop/1.7.12/slf4j-nop-1.7.12.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

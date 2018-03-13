@@ -5,8 +5,6 @@ import java.nio.channels.*;
 import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.mapdb.DB;
-import org.mapdb.DBMaker;
 import java.nio.*;
 
 /*
@@ -19,7 +17,6 @@ import java.nio.*;
 
 public class Preprocessor {
 	private static final Logger LOGGER = Logger.getLogger(Preprocessor.class.getName());
-	DB db = null;
 
 	public void preProcessInputFileMapping(String ipFile) throws IOException {
 
@@ -29,14 +26,11 @@ public class Preprocessor {
 		FileChannel fileChannel = null;
 		MappedByteBuffer byteBuffer = null;
 		File f = new File(ipFile);
-		db = DBMaker.fileDB(Constants.STR_DB_PATH).fileMmapEnable().make();
-		@SuppressWarnings("unchecked")
-		ConcurrentMap<Long, Long> map = (ConcurrentMap<Long, Long>) db.hashMap(Constants.STR_BYTE_LINE_MAP_NAME)
-				.createOrOpen();
+		ConcurrentMap<Long, Long> map = DbInstance.getMapInstance(Constants.STR_DB_PATH);
 
 		if (map.size() > 0) {
 			LOGGER.log(Level.INFO, "DB Model found, Load existing db model in  memory.");
-			db.close();
+			DbInstance.closeDB();
 			return;
 		}
 		try {
@@ -74,7 +68,7 @@ public class Preprocessor {
 		} finally {
 			raFile.close();
 			fileChannel.close();
-			db.close();
+			DbInstance.closeDB();
 			LOGGER.log(Level.INFO,
 					"Total time taken in Pre-processed File [" + (System.nanoTime() - startTime) / 1000000 + "] ms");
 		}

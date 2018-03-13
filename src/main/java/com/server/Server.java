@@ -35,7 +35,7 @@ public class Server {
 			port(Integer.valueOf(args[1]));
 		}
 
-		lsObj = new LineServiceController();
+		lsObj = getLineServiceControllerObj();
 		LOGGER.info("Open localhost:4567/lines/5 to access the API");
 
 		/*
@@ -53,7 +53,7 @@ public class Server {
 			});
 		} 
 		catch (Exception e) {
-			lsObj.lsDAO.db.close();
+			DbInstance.closeDB();
 		}
 	}
 
@@ -83,4 +83,10 @@ public class Server {
 		res.body(Constants.STR_LINE_OUT_OF_FILE_MESSAGE);
 		return res;
 	}
+	
+	
+	public static LineServiceController getLineServiceControllerObj() {
+		return new LineServiceController();
+	}
+	
 }

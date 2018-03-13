@@ -23,22 +23,16 @@ import java.util.logging.Logger;
  */
 
 public class LineServiceController {
-	LineServiceDAO lsDAO = null;
 	ConcurrentMap<Long, Long> linesMap = null;
 	ConcurrentLinkedHashMap<Long, String> cache = null;
 	private static final Logger LOGGER = Logger.getLogger(LineServiceController.class.getName());
 
 	public LineServiceController() {
-		lsDAO = new LineServiceDAO();
-		linesMap = lsDAO.initDB(Constants.STR_DB_PATH);
+		linesMap = DbInstance.getMapInstance(Constants.STR_DB_PATH);
 		cache = new Builder<Long, String>().maximumWeightedCapacity(500).build();
 	}
-
-	public LineServiceController(LineServiceDAO lsDAO) {
-		this.lsDAO = lsDAO;
-		cache = new Builder<Long, String>().maximumWeightedCapacity(500).build();
-	}
-
+	
+	
 	public String getLineFromLineNumber(long lineNum, String filePath) {
 		// Logic to Random Access file and line
 		String fileLineData = null;
