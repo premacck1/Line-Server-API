@@ -94,7 +94,7 @@ Async operations better.
     I chose Spark Framework for creating the API Server. Spark is very fast & light weight. It is excellent for rapid prototyping. It is very easy to setup. One of the reasons i chose spark, - so that i can spend most of my time building the logic behind the API program.
     
 ### f) How long did you spend on this exercise? If you had unlimited more time to spend on this,   how would you spend it and how would you prioritize each item?
-    I spent 2-3 days working on this project. Improving/Optimizing the project with each iteration. If i had unlimited time, i would work more on tuning the performance of this system with huge files and 100000 and more concurrent users. I would also work on polishing the documentation and writing more comprehensive unit tests.
+    I spent 3 days working on this project. Improving/Optimizing the project with each iteration. If i had unlimited time, i would work more on tuning the performance of this system with huge files and 100000 and more concurrent users. I would also work on polishing the documentation and writing more comprehensive unit tests.
 
 ### g) If you were to critique your code, what would you have to say about it?
     I didn't do profiling for this code in details, like: heap & thread usage. I just performed stress testing with tool "Restful Stress" to see how the system is behaving under different load. I believe I could do more initial pre-processing of the file by dividing them into smaller chunks and processing it.
