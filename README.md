@@ -20,7 +20,7 @@ It returns an HTTP status of 200 and the text of the requested line or an HTTP 4
 status if the requested line is beyond the end of the file.
   
 ## Follow these steps to execute the project:
-
+[x]- 
 
 ## How it works?
 * First the Input file provided in argument is Preprocessed. This is how pre-processing works:
@@ -51,6 +51,7 @@ status if the requested line is beyond the end of the file.
   This data is converted in to string and then returned as JSON String in response. Now LRU Cache is also updated with 
   this record.
 * RandomAccessFile is synchronized. So we can make multiple reads and serve multiple clients at the same time.
+* Singleton Design pattern is followed with the mapDB. 
 
 ## Dependencies
 * spark-core : 2.7.2
