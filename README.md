@@ -20,7 +20,13 @@ It returns an HTTP status of 200 and the text of the requested line or an HTTP 4
 status if the requested line is beyond the end of the file.
   
 ## Follow these steps to execute the project:
-[x]- 
+- [x] Open terminal and cd to the root directory of the project.
+- [x] Type & run "./build.sh" command to execute build.sh script. This will download all the dependencies, build the project,
+      run all the unit tests and if they successfully pass, create a Jar file.
+- [x] To run the project, simple type "./run.sh <Input File Path as Argument>". Server will start.
+- [x] You can sent GET request to API using "http://localhost:4567/lines/<LineNumber>". You will receive a JSON in response.
+- [x] You can also configure port number by sending it as second argument to "./run.sh". But this is optional. 
+
 
 ## How it works?
 * First the Input file provided in argument is Preprocessed. This is how pre-processing works:
