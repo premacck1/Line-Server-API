@@ -98,3 +98,9 @@ Async operations better.
 
 ### g) If you were to critique your code, what would you have to say about it?
     I didn't do profiling for this code in details, like: heap & thread usage. I just performed stress testing with tool "Restful Stress" to see how the system is behaving under different load. I believe I could do more initial pre-processing of the file by dividing them into smaller chunks and processing it.
+    
+## Performance/Stress Measurements:
+
+![Performance Matrix 1](/Performance/With_cache.PNG?raw=true "Performance Measurement")
+![Performance Matrix 1](/Performance/With_cache_stress.PNG?raw=true "Stress Measurement")
+
