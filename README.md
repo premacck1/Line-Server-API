@@ -23,8 +23,8 @@ status if the requested line is beyond the end of the file.
 - [x] Open terminal and cd to the root directory of the project.
 - [x] Type & run "./build.sh" command to execute build.sh script. This will download all the dependencies, build the project,
       run all the unit tests and if they successfully pass, create a Jar file.
-- [x] To run the project, simple type "./run.sh <Full path of Input File as Argument>". Server will start.
-- [x] You can sent GET request to API using "http://localhost:4567/lines/<LineNumber>". You will receive a JSON in response.
+- [x] To run the project, simple type ./run.sh "Full path of Input File as Argument". Server will start.
+- [x] You can sent GET request to API using "http://localhost:4567/lines/LineIndex". You will receive a JSON in response.
 - [x] You can also configure port number by sending it as second argument to "./run.sh". But this is optional. 
 
 
